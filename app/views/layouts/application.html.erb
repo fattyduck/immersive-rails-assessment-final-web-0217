@@ -3,12 +3,17 @@
   <head>
     <title>ImmersiveRailsAssessment</title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <%=link_to "Episodes", episodes_path%>
+    <%=link_to "Guests", guests_path%>
+    <%=link_to "Appearances", appearances_path%>
+    <%=link_to "New Appearances", new_appearance_path%>
+    <%=link_to "Login", login_path%>
+    <%=link_to "Logout", logout_path%>
     <%= yield %>
   </body>
 </html>

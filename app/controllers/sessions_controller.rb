@@ -1,6 +1,7 @@
 class SessionsController < ApplicationController
 
   def new
+    redirect_to episodes_path if session[:user_id]
   end
 
   def create
@@ -11,6 +12,11 @@ class SessionsController < ApplicationController
     else
       redirect_to login_path
     end
+  end
+
+  def destroy
+    session[:user_id] = nil
+    redirect_to login_path
   end
 
 end
